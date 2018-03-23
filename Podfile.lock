@@ -1,0 +1,28 @@
+PODS:
+  - Cartography (3.0.1)
+  - DeepDiff (1.1.2)
+  - Reusable (4.0.2):
+    - Reusable/Storyboard (= 4.0.2)
+    - Reusable/View (= 4.0.2)
+  - Reusable/Storyboard (4.0.2)
+  - Reusable/View (4.0.2)
+  - SkeletonView (1.1.1)
+  - Windless (0.1.5)
+
+DEPENDENCIES:
+  - Cartography
+  - DeepDiff
+  - Reusable
+  - SkeletonView
+  - Windless
+
+SPEC CHECKSUMS:
+  Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
+  DeepDiff: 35c661301baeb2db083ea1b9af183daab6af1c05
+  Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
+  SkeletonView: 041053e904504e7d8db83df166e599be75659fe1
+  Windless: c6b7d63ac3a0c7e6b241e316650d4605abf71894
+
+PODFILE CHECKSUM: 3fad235c5591fa1320819549ed6101a56897eb56
+
+COCOAPODS: 1.4.0
