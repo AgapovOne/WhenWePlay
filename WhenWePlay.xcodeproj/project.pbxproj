@@ -7,15 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D8C39DE2064F736003CC445 /* UIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8C39D52064F736003CC445 /* UIFramework.framework */; };
+		8D8C39E52064F736003CC445 /* UIFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8C39E42064F736003CC445 /* UIFrameworkTests.swift */; };
+		8D8C39E72064F736003CC445 /* UIFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D8C39D72064F736003CC445 /* UIFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8D8C39EA2064F736003CC445 /* UIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8C39D52064F736003CC445 /* UIFramework.framework */; };
+		8D8C39EB2064F736003CC445 /* UIFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8C39D52064F736003CC445 /* UIFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D8C39F42064FB89003CC445 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A73D620643CDB0077826F /* GameListViewController.swift */; };
+		8DD156CA2065094F00DE0156 /* GameListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB982B206431AF009055F7 /* GameListViewController.storyboard */; };
 		8DFB9828206431AF009055F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB9827206431AF009055F7 /* AppDelegate.swift */; };
-		8DFB982A206431AF009055F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB9829206431AF009055F7 /* ViewController.swift */; };
-		8DFB982D206431AF009055F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB982B206431AF009055F7 /* Main.storyboard */; };
 		8DFB982F206431AF009055F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB982E206431AF009055F7 /* Assets.xcassets */; };
 		8DFB9832206431AF009055F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB9830206431AF009055F7 /* LaunchScreen.storyboard */; };
 		8DFB983D206431B0009055F7 /* WhenWePlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFB983C206431B0009055F7 /* WhenWePlayTests.swift */; };
+		94A38355B4ECEF96BB8D156B /* Pods_WhenWePlay_UIFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF70DF87334723EF6395A6C /* Pods_WhenWePlay_UIFramework.framework */; };
+		9B14A0BAB51A3683C0E8C080 /* Pods_WhenWePlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944E3C78FE7238B6D71C8315 /* Pods_WhenWePlay.framework */; };
+		A8375BC2F3B0FA4D34E22541 /* Pods_WhenWePlayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10401467F1E0A5A7E2D90AFA /* Pods_WhenWePlayTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8D8C39DF2064F736003CC445 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DFB981C206431AF009055F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D8C39D42064F736003CC445;
+			remoteInfo = UIFramework;
+		};
+		8D8C39E12064F736003CC445 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DFB981C206431AF009055F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DFB9823206431AF009055F7;
+			remoteInfo = WhenWePlay;
+		};
+		8D8C39E82064F736003CC445 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DFB981C206431AF009055F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D8C39D42064F736003CC445;
+			remoteInfo = UIFramework;
+		};
 		8DFB9839206431B0009055F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8DFB981C206431AF009055F7 /* Project object */;
@@ -25,24 +54,75 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8D8C39F12064F736003CC445 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8D8C39EB2064F736003CC445 /* UIFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		046ECBEDB82FB9B606801E74 /* Pods-WhenWePlay-UIFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhenWePlay-UIFramework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhenWePlay-UIFramework/Pods-WhenWePlay-UIFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		10401467F1E0A5A7E2D90AFA /* Pods_WhenWePlayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhenWePlayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51F4DA58B00400CE88EB6E70 /* Pods-WhenWePlay-UIFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhenWePlay-UIFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhenWePlay-UIFramework/Pods-WhenWePlay-UIFramework.release.xcconfig"; sourceTree = "<group>"; };
+		5408A600AAB92FF9C0448210 /* Pods_UIFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		558D6DD42913F3E3A3982B95 /* Pods-UIFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIFramework/Pods-UIFramework.release.xcconfig"; sourceTree = "<group>"; };
+		8D8C39CF2064BEDD003CC445 /* UI.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = UI.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8D8C39D52064F736003CC445 /* UIFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8C39D72064F736003CC445 /* UIFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFramework.h; sourceTree = "<group>"; };
+		8D8C39D82064F736003CC445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D8C39DD2064F736003CC445 /* UIFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8C39E42064F736003CC445 /* UIFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFrameworkTests.swift; sourceTree = "<group>"; };
+		8D8C39E62064F736003CC445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D9A73D620643CDB0077826F /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
 		8DFB9824206431AF009055F7 /* WhenWePlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhenWePlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFB9827206431AF009055F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8DFB9829206431AF009055F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8DFB982C206431AF009055F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8DFB982C206431AF009055F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GameListViewController.storyboard; sourceTree = "<group>"; };
 		8DFB982E206431AF009055F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DFB9831206431AF009055F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DFB9833206431AF009055F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DFB9838206431B0009055F7 /* WhenWePlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhenWePlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DFB983C206431B0009055F7 /* WhenWePlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhenWePlayTests.swift; sourceTree = "<group>"; };
 		8DFB983E206431B0009055F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		910AE78A27C053773C753BD3 /* Pods-WhenWePlayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhenWePlayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhenWePlayTests/Pods-WhenWePlayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		944E3C78FE7238B6D71C8315 /* Pods_WhenWePlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhenWePlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3E5AFBC18E59A36733A948 /* Pods-UIFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIFramework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UIFramework/Pods-UIFramework.debug.xcconfig"; sourceTree = "<group>"; };
+		D718E2794A2EC1735DDC7B60 /* Pods-WhenWePlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhenWePlay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhenWePlay/Pods-WhenWePlay.debug.xcconfig"; sourceTree = "<group>"; };
+		D90BE2D7314DFA2B485D1CB3 /* Pods-WhenWePlayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhenWePlayTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhenWePlayTests/Pods-WhenWePlayTests.release.xcconfig"; sourceTree = "<group>"; };
+		E0D1B1A18F3A0BAEE34F84C2 /* Pods-WhenWePlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhenWePlay.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhenWePlay/Pods-WhenWePlay.release.xcconfig"; sourceTree = "<group>"; };
+		EFF70DF87334723EF6395A6C /* Pods_WhenWePlay_UIFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhenWePlay_UIFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8D8C39D12064F736003CC445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94A38355B4ECEF96BB8D156B /* Pods_WhenWePlay_UIFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D8C39DA2064F736003CC445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8C39DE2064F736003CC445 /* UIFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DFB9821206431AF009055F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B14A0BAB51A3683C0E8C080 /* Pods_WhenWePlay.framework in Frameworks */,
+				8D8C39EA2064F736003CC445 /* UIFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +130,115 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8375BC2F3B0FA4D34E22541 /* Pods_WhenWePlayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		591C59974041E194F72CB558 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D718E2794A2EC1735DDC7B60 /* Pods-WhenWePlay.debug.xcconfig */,
+				E0D1B1A18F3A0BAEE34F84C2 /* Pods-WhenWePlay.release.xcconfig */,
+				910AE78A27C053773C753BD3 /* Pods-WhenWePlayTests.debug.xcconfig */,
+				D90BE2D7314DFA2B485D1CB3 /* Pods-WhenWePlayTests.release.xcconfig */,
+				BF3E5AFBC18E59A36733A948 /* Pods-UIFramework.debug.xcconfig */,
+				558D6DD42913F3E3A3982B95 /* Pods-UIFramework.release.xcconfig */,
+				046ECBEDB82FB9B606801E74 /* Pods-WhenWePlay-UIFramework.debug.xcconfig */,
+				51F4DA58B00400CE88EB6E70 /* Pods-WhenWePlay-UIFramework.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		735284A258BB9C2664608590 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				944E3C78FE7238B6D71C8315 /* Pods_WhenWePlay.framework */,
+				10401467F1E0A5A7E2D90AFA /* Pods_WhenWePlayTests.framework */,
+				5408A600AAB92FF9C0448210 /* Pods_UIFramework.framework */,
+				EFF70DF87334723EF6395A6C /* Pods_WhenWePlay_UIFramework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D8C39D62064F736003CC445 /* UIFramework */ = {
+			isa = PBXGroup;
+			children = (
+				8D8C39D72064F736003CC445 /* UIFramework.h */,
+				8D8C39D82064F736003CC445 /* Info.plist */,
+			);
+			path = UIFramework;
+			sourceTree = "<group>";
+		};
+		8D8C39E32064F736003CC445 /* UIFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D8C39E42064F736003CC445 /* UIFrameworkTests.swift */,
+				8D8C39E62064F736003CC445 /* Info.plist */,
+			);
+			path = UIFrameworkTests;
+			sourceTree = "<group>";
+		};
+		8D9A73CC206435900077826F /* State */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		8D9A73CD206435940077826F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8DFB9827206431AF009055F7 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8D9A73D220643C360077826F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8D9A73D320643C510077826F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8D9A73D620643CDB0077826F /* GameListViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8D9A73D420643C600077826F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DFB982E206431AF009055F7 /* Assets.xcassets */,
+				8DFB9833206431AF009055F7 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8D9A73D520643C750077826F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8DFB982B206431AF009055F7 /* GameListViewController.storyboard */,
+				8DFB9830206431AF009055F7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		8DFB981B206431AF009055F7 = {
 			isa = PBXGroup;
 			children = (
 				8DFB9826206431AF009055F7 /* WhenWePlay */,
 				8DFB983B206431B0009055F7 /* WhenWePlayTests */,
+				8D8C39D62064F736003CC445 /* UIFramework */,
+				8D8C39E32064F736003CC445 /* UIFrameworkTests */,
 				8DFB9825206431AF009055F7 /* Products */,
+				591C59974041E194F72CB558 /* Pods */,
+				735284A258BB9C2664608590 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +247,8 @@
 			children = (
 				8DFB9824206431AF009055F7 /* WhenWePlay.app */,
 				8DFB9838206431B0009055F7 /* WhenWePlayTests.xctest */,
+				8D8C39D52064F736003CC445 /* UIFramework.framework */,
+				8D8C39DD2064F736003CC445 /* UIFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,12 +256,13 @@
 		8DFB9826206431AF009055F7 /* WhenWePlay */ = {
 			isa = PBXGroup;
 			children = (
-				8DFB9827206431AF009055F7 /* AppDelegate.swift */,
-				8DFB9829206431AF009055F7 /* ViewController.swift */,
-				8DFB982B206431AF009055F7 /* Main.storyboard */,
-				8DFB982E206431AF009055F7 /* Assets.xcassets */,
-				8DFB9830206431AF009055F7 /* LaunchScreen.storyboard */,
-				8DFB9833206431AF009055F7 /* Info.plist */,
+				8D8C39CF2064BEDD003CC445 /* UI.playground */,
+				8D9A73CD206435940077826F /* Application */,
+				8D9A73CC206435900077826F /* State */,
+				8D9A73D220643C360077826F /* Models */,
+				8D9A73D320643C510077826F /* UI */,
+				8D9A73D420643C600077826F /* Resources */,
+				8D9A73D520643C750077826F /* Storyboards */,
 			);
 			path = WhenWePlay;
 			sourceTree = "<group>";
@@ -98,18 +278,73 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		8D8C39D22064F736003CC445 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8C39E72064F736003CC445 /* UIFramework.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		8DFB9823206431AF009055F7 /* WhenWePlay */ = {
+		8D8C39D42064F736003CC445 /* UIFramework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DFB9841206431B0009055F7 /* Build configuration list for PBXNativeTarget "WhenWePlay" */;
+			buildConfigurationList = 8D8C39F02064F736003CC445 /* Build configuration list for PBXNativeTarget "UIFramework" */;
 			buildPhases = (
-				8DFB9820206431AF009055F7 /* Sources */,
-				8DFB9821206431AF009055F7 /* Frameworks */,
-				8DFB9822206431AF009055F7 /* Resources */,
+				A90FC7BA0A70F86656D7B2D2 /* [CP] Check Pods Manifest.lock */,
+				8D8C39D02064F736003CC445 /* Sources */,
+				8D8C39D12064F736003CC445 /* Frameworks */,
+				8D8C39D22064F736003CC445 /* Headers */,
+				8D8C39D32064F736003CC445 /* Resources */,
+				364D4C2A1F729A614DD720D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = UIFramework;
+			productName = UIFramework;
+			productReference = 8D8C39D52064F736003CC445 /* UIFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8D8C39DC2064F736003CC445 /* UIFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D8C39F22064F736003CC445 /* Build configuration list for PBXNativeTarget "UIFrameworkTests" */;
+			buildPhases = (
+				8D8C39D92064F736003CC445 /* Sources */,
+				8D8C39DA2064F736003CC445 /* Frameworks */,
+				8D8C39DB2064F736003CC445 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D8C39E02064F736003CC445 /* PBXTargetDependency */,
+				8D8C39E22064F736003CC445 /* PBXTargetDependency */,
+			);
+			name = UIFrameworkTests;
+			productName = UIFrameworkTests;
+			productReference = 8D8C39DD2064F736003CC445 /* UIFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8DFB9823206431AF009055F7 /* WhenWePlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DFB9841206431B0009055F7 /* Build configuration list for PBXNativeTarget "WhenWePlay" */;
+			buildPhases = (
+				559DA3CABAA95DD3E5D580BC /* [CP] Check Pods Manifest.lock */,
+				8DFB9820206431AF009055F7 /* Sources */,
+				8DFB9821206431AF009055F7 /* Frameworks */,
+				8DFB9822206431AF009055F7 /* Resources */,
+				3B9C93682A393C270D88F3C5 /* [CP] Embed Pods Frameworks */,
+				E47A4777BAC915E0DFA8CCBC /* [CP] Copy Pods Resources */,
+				8D8C39F12064F736003CC445 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D8C39E92064F736003CC445 /* PBXTargetDependency */,
 			);
 			name = WhenWePlay;
 			productName = WhenWePlay;
@@ -120,9 +355,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DFB9844206431B0009055F7 /* Build configuration list for PBXNativeTarget "WhenWePlayTests" */;
 			buildPhases = (
+				03692907EE328BC05002196D /* [CP] Check Pods Manifest.lock */,
 				8DFB9834206431B0009055F7 /* Sources */,
 				8DFB9835206431B0009055F7 /* Frameworks */,
 				8DFB9836206431B0009055F7 /* Resources */,
+				D24EA86AAFCCEEBA1319B22E /* [CP] Embed Pods Frameworks */,
+				C050DA5C37CF8104548C8006 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +382,15 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Alex Agapov";
 				TargetAttributes = {
+					8D8C39D42064F736003CC445 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					8D8C39DC2064F736003CC445 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8DFB9823206431AF009055F7;
+					};
 					8DFB9823206431AF009055F7 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -170,18 +417,34 @@
 			targets = (
 				8DFB9823206431AF009055F7 /* WhenWePlay */,
 				8DFB9837206431B0009055F7 /* WhenWePlayTests */,
+				8D8C39D42064F736003CC445 /* UIFramework */,
+				8D8C39DC2064F736003CC445 /* UIFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8D8C39D32064F736003CC445 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD156CA2065094F00DE0156 /* GameListViewController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D8C39DB2064F736003CC445 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DFB9822206431AF009055F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8DFB9832206431AF009055F7 /* LaunchScreen.storyboard in Resources */,
 				8DFB982F206431AF009055F7 /* Assets.xcassets in Resources */,
-				8DFB982D206431AF009055F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,12 +457,170 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03692907EE328BC05002196D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhenWePlayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		364D4C2A1F729A614DD720D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhenWePlay-UIFramework/Pods-WhenWePlay-UIFramework-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B9C93682A393C270D88F3C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WhenWePlay/Pods-WhenWePlay-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
+				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
+				"${BUILT_PRODUCTS_DIR}/Windless/Windless.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Windless.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhenWePlay/Pods-WhenWePlay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		559DA3CABAA95DD3E5D580BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhenWePlay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A90FC7BA0A70F86656D7B2D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhenWePlay-UIFramework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C050DA5C37CF8104548C8006 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhenWePlayTests/Pods-WhenWePlayTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D24EA86AAFCCEEBA1319B22E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhenWePlayTests/Pods-WhenWePlayTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E47A4777BAC915E0DFA8CCBC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhenWePlay/Pods-WhenWePlay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		8D8C39D02064F736003CC445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8C39F42064FB89003CC445 /* GameListViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D8C39D92064F736003CC445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D8C39E52064F736003CC445 /* UIFrameworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DFB9820206431AF009055F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DFB982A206431AF009055F7 /* ViewController.swift in Sources */,
 				8DFB9828206431AF009055F7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +636,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8D8C39E02064F736003CC445 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D8C39D42064F736003CC445 /* UIFramework */;
+			targetProxy = 8D8C39DF2064F736003CC445 /* PBXContainerItemProxy */;
+		};
+		8D8C39E22064F736003CC445 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DFB9823206431AF009055F7 /* WhenWePlay */;
+			targetProxy = 8D8C39E12064F736003CC445 /* PBXContainerItemProxy */;
+		};
+		8D8C39E92064F736003CC445 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D8C39D42064F736003CC445 /* UIFramework */;
+			targetProxy = 8D8C39E82064F736003CC445 /* PBXContainerItemProxy */;
+		};
 		8DFB983A206431B0009055F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DFB9823206431AF009055F7 /* WhenWePlay */;
@@ -223,12 +659,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8DFB982B206431AF009055F7 /* Main.storyboard */ = {
+		8DFB982B206431AF009055F7 /* GameListViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8DFB982C206431AF009055F7 /* Base */,
 			);
-			name = Main.storyboard;
+			name = GameListViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		8DFB9830206431AF009055F7 /* LaunchScreen.storyboard */ = {
@@ -242,6 +678,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8D8C39EC2064F736003CC445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 046ECBEDB82FB9B606801E74 /* Pods-WhenWePlay-UIFramework.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7J9NCU659T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UIFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agapovco.UIFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8D8C39ED2064F736003CC445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51F4DA58B00400CE88EB6E70 /* Pods-WhenWePlay-UIFramework.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7J9NCU659T;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UIFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agapovco.UIFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8D8C39EE2064F736003CC445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7J9NCU659T;
+				INFOPLIST_FILE = UIFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agapovco.UIFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhenWePlay.app/WhenWePlay";
+			};
+			name = Debug;
+		};
+		8D8C39EF2064F736003CC445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7J9NCU659T;
+				INFOPLIST_FILE = UIFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agapovco.UIFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhenWePlay.app/WhenWePlay";
+			};
+			name = Release;
+		};
 		8DFB983F206431B0009055F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -351,11 +871,13 @@
 		};
 		8DFB9842206431B0009055F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D718E2794A2EC1735DDC7B60 /* Pods-WhenWePlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7J9NCU659T;
-				INFOPLIST_FILE = WhenWePlay/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WhenWePlay/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.agapovco.WhenWePlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,11 +888,13 @@
 		};
 		8DFB9843206431B0009055F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0D1B1A18F3A0BAEE34F84C2 /* Pods-WhenWePlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7J9NCU659T;
-				INFOPLIST_FILE = WhenWePlay/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/WhenWePlay/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.agapovco.WhenWePlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +905,7 @@
 		};
 		8DFB9845206431B0009055F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 910AE78A27C053773C753BD3 /* Pods-WhenWePlayTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -398,6 +923,7 @@
 		};
 		8DFB9846206431B0009055F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D90BE2D7314DFA2B485D1CB3 /* Pods-WhenWePlayTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -416,6 +942,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8D8C39F02064F736003CC445 /* Build configuration list for PBXNativeTarget "UIFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D8C39EC2064F736003CC445 /* Debug */,
+				8D8C39ED2064F736003CC445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D8C39F22064F736003CC445 /* Build configuration list for PBXNativeTarget "UIFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D8C39EE2064F736003CC445 /* Debug */,
+				8D8C39EF2064F736003CC445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8DFB981F206431AF009055F7 /* Build configuration list for PBXProject "WhenWePlay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
