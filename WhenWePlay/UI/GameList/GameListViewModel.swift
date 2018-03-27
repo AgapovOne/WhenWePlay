@@ -10,9 +10,9 @@ import Foundation
 
 typealias Item = String
 
-class GameListViewModel {
+public final class GameListViewModel {
     struct State {
-        var items: [Item]
+        var items: [GameViewModel]
     }
 
     enum Action {
@@ -22,25 +22,31 @@ class GameListViewModel {
 
     typealias ActionClosure = (Action) -> Void
 
-    var actionCallback: ActionClosure
-
-    var state = State(items: ["KAKA"]) {
+    var state = State(items: []) {
         didSet {
-            actionCallback(.stateDidUpdate(newState: state, prevState: oldValue))
+            actionCallback?(.stateDidUpdate(newState: state, prevState: oldValue))
         }
     }
 
-    init(_ callback: @escaping ActionClosure) {
-        actionCallback = callback
-        callback(.stateDidUpdate(newState: state, prevState: nil))
+    public init(games: [Game]) {
+        state = State(items: games.map(GameViewModel.init))
+    }
+
+    var actionCallback: ActionClosure? {
+        didSet {
+            actionCallback?(.stateDidUpdate(newState: state, prevState: nil))
+        }
     }
 
     func reloadButtonPressed() {
-        state.items = Array(Set([
-            "ZAZA",
-            "BABA",
-            "DADA",
-        ]))
+        state.items = [
+            Game(uuid: UUID(), name: "THE GAME"),
+            Game(uuid: UUID(), name: "THE GAME 2"),
+            Game(uuid: UUID(), name: "THE NON GAME"),
+            Game(uuid: UUID(), name: "lil game"),
+            Game(uuid: UUID(), name: "gamers game"),
+        ]
+        .map(GameViewModel.init)
 
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Alex Agapov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public protocol CellViewModel {}
 

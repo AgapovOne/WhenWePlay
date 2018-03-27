@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        window?.rootViewController = GameListViewController.instantiate()
+        let vm = GameListViewModel(games: [])
+        let vc = GameListViewController.instantiate(viewModel: vm)
+        window?.rootViewController = vc
 
         return true
     }

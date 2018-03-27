@@ -44,7 +44,7 @@ open class CollectionView<Cell: UICollectionViewCell, S: Source>: UICollectionVi
     self.useDiffs = useDiffs
     super.init(frame: frame, collectionViewLayout: layout)
     self.customDataSource = DataSource<S, Cell>(collectionView: self)
-    self.register(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
+    register(cellType: Cell.self)
     self.delegate = self
     self.source = source
   }
@@ -73,8 +73,6 @@ open class CollectionView<Cell: UICollectionViewCell, S: Source>: UICollectionVi
       self.customDataSource.configureInteractions = self.configureInteractions
     }
   }
-  open var didTapEdit: ((String) -> ())?
-  
   
   // MARK: - UICollectionViewDelegate
   open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

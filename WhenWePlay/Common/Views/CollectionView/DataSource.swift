@@ -39,10 +39,10 @@ UICollectionViewDataSource where Cell: ConfigurableCell, Cell.VM == S.SourceType
   }
   
   public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: Cell.reuseIdentifier,
-                                                             for: indexPath) as? Cell else { return UICollectionViewCell() }
+    let cell: Cell = collectionView.dequeueReusableCell(for: indexPath)
+
     if let item = self.item(at: indexPath) {
-      cell.model = item
+      cell.viewModel = item
     }
     
     self.configureInteractions?(cell, indexPath)

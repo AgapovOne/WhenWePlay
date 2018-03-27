@@ -12,7 +12,9 @@ extension UIButton {
     static func createDefaultButton(title: String) -> UIButton {
         let btn = UIButton(frame: .zero)
         btn.setTitle(title, for: .normal)
-        btn.tintColor = .green
+        btn.setTitleColor(.red, for: .normal)
+
+        btn.setTitleColor(UIColor.red.withAlphaComponent(0.6), for: .highlighted)
         return btn
     }
 }

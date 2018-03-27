@@ -11,36 +11,51 @@ import DeepDiff
 import Cartography
 import Reusable
 
-public class GameListViewController: UIViewController, StoryboardBased {
+public final class GameListViewController: UIViewController, StoryboardBased {
 
-    // UI
-//    private lazy var collectionView: UICollectionView = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: self.view.frame.width - 32, height: 200)
-//        let cv = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
-//        cv.dataSource = self
-//        return cv
-//    }()
-    private lazy var button = UIButton.createDefaultButton(title: "RELOAD")
+    // MARK: - UI
+    private lazy var collectionView: CollectionView<GameListCollectionViewCell, SimpleSource<GameViewModel>> = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: self.view.bounds.width - 32,
+                                 height: 80)
+        layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 8
+        let collectionView = CollectionView<GameListCollectionViewCell, SimpleSource<GameViewModel>>(frame: .zero, layout: layout)
+        collectionView.useDiffs = true
+        collectionView.backgroundColor = .white
+        return collectionView
+    }()
+    private lazy var button: UIButton = {
+        let b = UIButton.createDefaultButton(title: "RELOAD")
+        return b
+    }()
 
-    // Setup
+    // MARK: - Dependencies
     var viewModel: GameListViewModel!
 
-    // Properties
-    var items = [Item]()
+    // MARK: - Initialization
+    public static func instantiate(viewModel: GameListViewModel) -> GameListViewController {
+        let vc = GameListViewController.instantiate()
+        vc.viewModel = viewModel
+        return vc
+    }
 
+    // MARK: - Lifecycle
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel = GameListViewModel({ [unowned self] action in
+        assert(viewModel != nil, "View Model should be instantiated. Use instantiate(viewModel:)")
+
+        viewModel.actionCallback = { [unowned self] action in
             switch action {
             case .stateDidUpdate(let state, let prevState):
-                let oldItems = prevState?.items ?? []
-                let changes = diff(old: oldItems, new: state.items)
-
-                self.collectionView.reload(changes: changes, section: 0, completion: { _ in })
+                self.collectionView.source = SimpleSource<GameViewModel>(state.items)
             }
-        })
+        }
+
+        collectionView.didTapItem = { [unowned self] indexPath in
+            print("TAPP!!!@")
+        }
 
         view.addSubview(collectionView)
         constrain(collectionView) { (c) in
@@ -57,27 +72,5 @@ public class GameListViewController: UIViewController, StoryboardBased {
 
     @objc private func buttonDidTap() {
         viewModel.reloadButtonPressed()
-    }
-}
-
-extension GameListViewController: UICollectionViewDataSource {
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.state.items.count
-    }
-
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: GameListCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        var color: UIColor
-        switch indexPath.row {
-        case 0...1:
-            color = .black
-        case 2...3:
-            color = .green
-        default:
-            color = .yellow
-        }
-        cell.backgroundColor = color
-        cell.item = viewModel.state.items[indexPath.row]
-        return cell
     }
 }

@@ -6,8 +6,15 @@ import UIFramework
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
-let vc = GameListViewController.instantiate()
+let vm = GameListViewModel(games: [
+    Game(uuid: UUID(), name: "THE GAME"),
+    Game(uuid: UUID(), name: "THE GAME 2"),
+    Game(uuid: UUID(), name: "THE NON GAME"),
+    Game(uuid: UUID(), name: "lil game"),
+    Game(uuid: UUID(), name: "gamers game"),
+    ])
+let vc = GameListViewController.instantiate(viewModel: vm)
 
-let (parent, _) = playgroundControllers(device: .phone4_7inch, orientation: .portrait, child: vc)
+let (parent, _) = playgroundControllers(device: .pad, orientation: .portrait, child: vc)
 
 PlaygroundPage.current.liveView = parent

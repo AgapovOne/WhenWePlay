@@ -12,5 +12,5 @@ import Reusable
 public protocol ConfigurableCell: Reusable {
     associatedtype VM: CellViewModel
 
-    var model: VM? { get set }
+    var viewModel: VM? { get set }
 }
