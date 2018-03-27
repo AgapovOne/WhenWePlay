@@ -1,0 +1,6 @@
+sources:
+  - WhenWePlay/
+templates:
+  - Sourcery/Templates/
+output:
+  WhenWePlay/Generated/
