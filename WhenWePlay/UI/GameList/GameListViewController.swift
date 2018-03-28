@@ -44,6 +44,34 @@ public final class GameListViewController: UIViewController, StoryboardBased {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupViewModel()
+
+        setupUI()
+
+        setupActions()
+    }
+
+    fileprivate func setupUI() {
+        view.addSubview(collectionView)
+        constrain(collectionView) { (c) in
+            c.edges == c.superview!.edges
+        }
+
+        view.addSubview(button)
+        constrain(button) { (btn) in
+            let area: SupportsEdgesLayoutProxy
+            if #available(iOS 11.0, *) {
+                area = btn.superview!.safeAreaLayoutGuide
+            } else {
+                area = btn.superview!
+            }
+            btn.left == area.left
+            btn.right == area.right
+            btn.bottom == area.bottom - 8
+        }
+    }
+
+    fileprivate func setupViewModel() {
         assert(viewModel != nil, "View Model should be instantiated. Use instantiate(viewModel:)")
 
         viewModel.actionCallback = { [unowned self] action in
@@ -52,24 +80,17 @@ public final class GameListViewController: UIViewController, StoryboardBased {
                 self.collectionView.source = SimpleSource<GameViewModel>(state.items)
             }
         }
+    }
+
+    fileprivate func setupActions() {
+        button.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
 
         collectionView.didTapItem = { [unowned self] indexPath in
             print("TAPP!!!@")
         }
-
-        view.addSubview(collectionView)
-        constrain(collectionView) { (c) in
-            c.edges == c.superview!.edges
-        }
-
-        view.addSubview(button)
-        constrain(button) { (btn) in
-            btn.center == btn.superview!.center
-        }
-
-        button.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
     }
 
+    // MARK: - Actions
     @objc private func buttonDidTap() {
         viewModel.reloadButtonPressed()
     }

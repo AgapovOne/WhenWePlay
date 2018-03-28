@@ -10,8 +10,6 @@ let vm = GameListViewModel(games: [
     Game(uuid: UUID(), name: "THE GAME"),
     Game(uuid: UUID(), name: "THE GAME 2"),
     Game(uuid: UUID(), name: "THE NON GAME"),
-    Game(uuid: UUID(), name: "lil game"),
-    Game(uuid: UUID(), name: "gamers game"),
     ])
 let vc = GameListViewController.instantiate(viewModel: vm)
 

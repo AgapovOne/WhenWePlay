@@ -15,6 +15,12 @@ extension UIButton {
         btn.setTitleColor(.red, for: .normal)
 
         btn.setTitleColor(UIColor.red.withAlphaComponent(0.6), for: .highlighted)
+
+        btn.backgroundColor = .white
+        btn.layer.cornerRadius = 8
+        btn.layer.masksToBounds = true
+
+        btn.contentEdgeInsets = UIEdgeInsetsMake(16, 32, 16, 32)
         return btn
     }
 }

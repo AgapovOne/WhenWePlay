@@ -29,8 +29,8 @@ extension GameViewModel: Hashable, AutoEquatable {
 final public class GameListCollectionViewCell: UICollectionViewCell, Reusable, ConfigurableCell {
     public typealias VM = GameViewModel
 
-    var titleLabel: UILabel = {
-        let l = UILabel(frame: .zero)
+    lazy var titleLabel: UILabel = {
+        let l = UILabel.createDefaultLabel()
         return l
     }()
 
@@ -45,22 +45,20 @@ final public class GameListCollectionViewCell: UICollectionViewCell, Reusable, C
     }
 
     func setup() {
-        backgroundColor = .red
-
         addSubview(titleLabel)
         constrain(titleLabel) { label in
             label.edges == label.superview!.edges.inseted(horizontally: 16)
         }
 
-        let view = UIView()
-        view.backgroundColor = .green
-        addSubview(view)
-        constrain(view) { (view) in
-            view.width == 50
-            view.right == view.superview!.right
-            view.top == view.superview!.top
-            view.bottom == view.superview!.bottom
-        }
+        layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        layer.shadowRadius = 16.0
+        layer.shadowOffset = CGSize(width: 0, height: 4)
+        layer.masksToBounds = false
+        layer.shadowOpacity = 1
+
+//        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+
+        layer.shouldRasterize = true
     }
 
     public var viewModel: GameViewModel? {
