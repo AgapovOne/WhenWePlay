@@ -12,11 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
+    private var appCoordinator: AppCoordinator!
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let vm = GameListViewModel()
-        let vc = GameListViewController.instantiate(viewModel: vm)
-        window?.rootViewController = vc
+        window = UIWindow()
+        appCoordinator = AppCoordinator(window: window!)
+        appCoordinator.start()
+
+        window?.makeKeyAndVisible()
 
         return true
     }

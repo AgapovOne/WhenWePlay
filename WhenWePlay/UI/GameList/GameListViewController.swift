@@ -32,7 +32,8 @@ final class GameListViewController: UIViewController {
     private var viewModel: GameListViewModel!
 
     // MARK: - Public interface
-    private var didTapItem: Action? = nil
+    var didTapItem: Action?
+    var didTapDone: Action?
 
     // MARK: - Initialization
     static func instantiate(viewModel: GameListViewModel) -> GameListViewController {
@@ -70,6 +71,7 @@ final class GameListViewController: UIViewController {
             btn.right == area.right
             btn.bottom == area.bottom - 8
         }
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(barButtonDidTap))
     }
 
     fileprivate func setupViewModel() {
@@ -87,11 +89,15 @@ final class GameListViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
 
         collectionView.didTapItem = { [unowned self] indexPath in
-            print("TAPP!!!@")
+            self.didTapItem?()
         }
     }
 
     // MARK: - Actions
+    @objc private func barButtonDidTap() {
+        didTapDone?()
+    }
+
     @objc private func buttonDidTap() {
         viewModel.reloadButtonPressed()
     }

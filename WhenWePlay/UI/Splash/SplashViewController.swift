@@ -26,7 +26,7 @@ final class SplashViewController: UIViewController {
 //    private var viewModel: GameListViewModel!
 
     // MARK: - Public interface
-    private var didTapStart: Action? = nil
+    var didTapStart: Action? = nil
 
     // MARK: - Initialization
     static func instantiate() -> SplashViewController {
