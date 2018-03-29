@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct Game {
+struct Game {
     var uuid: UUID
     var name: String
 
-    public init(uuid: UUID, name: String) {
+    init(uuid: UUID, name: String) {
         self.uuid = uuid
         self.name = name
     }

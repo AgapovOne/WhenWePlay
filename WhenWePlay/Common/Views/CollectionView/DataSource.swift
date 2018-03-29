@@ -15,30 +15,30 @@ import UIKit
 // if you are looking for a way to automatize the reloadData() or performBatchUpdates() when the data changes,
 // look at the CollectionView class
 
-public class DataSource<S: Source, Cell: UICollectionViewCell>: NSObject,
+class DataSource<S: Source, Cell: UICollectionViewCell>: NSObject,
 UICollectionViewDataSource where Cell: ConfigurableCell, Cell.VM == S.SourceType {
   
-  public var source: S?
+  var source: S?
   
-  public var configureInteractions: ((Cell, IndexPath) -> ())?
+  var configureInteractions: ((Cell, IndexPath) -> ())?
   
   unowned var collectionView: UICollectionView
   
-  public init(collectionView: UICollectionView) {
+  init(collectionView: UICollectionView) {
     self.collectionView = collectionView
     super.init()
     collectionView.dataSource = self
   }
   
-  public func numberOfSections(in collectionView: UICollectionView) -> Int {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
     return self.source?.numberOfSections() ?? 0
   }
   
-  public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return self.source?.numberOfRows(section: section) ?? 0
   }
   
-  public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: Cell = collectionView.dequeueReusableCell(for: indexPath)
 
     if let item = self.item(at: indexPath) {
@@ -50,7 +50,7 @@ UICollectionViewDataSource where Cell: ConfigurableCell, Cell.VM == S.SourceType
     return cell
   }
   
-  public func item(at indexPath: IndexPath) -> S.SourceType? {
+  func item(at indexPath: IndexPath) -> S.SourceType? {
     guard indexPath.section >= 0,
       indexPath.row >= 0 else {
         return nil

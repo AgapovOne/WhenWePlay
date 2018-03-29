@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct GameViewModel: CellViewModel {
+struct GameViewModel: CellViewModel {
     var id: UUID
     var title: String
 
@@ -19,7 +19,7 @@ public struct GameViewModel: CellViewModel {
 }
 
 extension GameViewModel: Hashable, AutoEquatable {
-    public var hashValue: Int {
+    var hashValue: Int {
         return id.hashValue
     }
 }

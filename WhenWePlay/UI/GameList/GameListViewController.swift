@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import DeepDiff
 import Cartography
-import Reusable
 
-public final class GameListViewController: UIViewController, StoryboardBased {
+final class GameListViewController: UIViewController {
 
     // MARK: - UI
     private lazy var collectionView: CollectionView<GameListCollectionViewCell, SimpleSource<GameViewModel>> = {
@@ -31,17 +29,20 @@ public final class GameListViewController: UIViewController, StoryboardBased {
     }()
 
     // MARK: - Dependencies
-    var viewModel: GameListViewModel!
+    private var viewModel: GameListViewModel!
+
+    // MARK: - Public interface
+    private var didTapItem: Action? = nil
 
     // MARK: - Initialization
-    public static func instantiate(viewModel: GameListViewModel) -> GameListViewController {
-        let vc = GameListViewController.instantiate()
+    static func instantiate(viewModel: GameListViewModel) -> GameListViewController {
+        let vc = GameListViewController()
         vc.viewModel = viewModel
         return vc
     }
 
     // MARK: - Lifecycle
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViewModel()

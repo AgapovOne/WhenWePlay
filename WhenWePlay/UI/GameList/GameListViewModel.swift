@@ -10,7 +10,7 @@ import Foundation
 
 typealias Item = String
 
-public final class GameListViewModel {
+final class GameListViewModel {
     struct State {
         var items: [GameViewModel]
     }
@@ -30,7 +30,7 @@ public final class GameListViewModel {
         }
     }
 
-    public init(provider: GameDataProvider = LocalGameDataProvider()) {
+    init(provider: GameDataProvider = LocalGameDataProvider()) {
         self.provider = provider
     }
 

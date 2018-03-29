@@ -15,13 +15,13 @@ import UIKit
 /// set the `useDiffs` property to `true` and the CollectionView will automatically take care of that
 /// (using 'performBatchUpdates()' on the changes)
 
-open class CollectionView<Cell: UICollectionViewCell, S: Source>: UICollectionView, UICollectionViewDelegateFlowLayout where Cell: ConfigurableCell & SizeableCell, Cell.VM == S.SourceType {
+class CollectionView<Cell: UICollectionViewCell, S: Source>: UICollectionView, UICollectionViewDelegateFlowLayout where Cell: ConfigurableCell & SizeableCell, Cell.VM == S.SourceType {
   
-  public typealias ItemSelectionHandler = (IndexPath) -> ()
+  typealias ItemSelectionHandler = (IndexPath) -> ()
   
-  public var customDataSource: DataSource<S, Cell>!
+  var customDataSource: DataSource<S, Cell>!
   
-  open var source: S? {
+  var source: S? {
     set {
       // we are not updating the `customDataSource` right away in order to support `performBatchUpdates`
       // given that right before the update the system will call the `numberOfItemsInSection` method of the delegate
@@ -38,9 +38,9 @@ open class CollectionView<Cell: UICollectionViewCell, S: Source>: UICollectionVi
   // old source used in the diff updates
   private var oldSource: S?
   
-  open var useDiffs: Bool
+  var useDiffs: Bool
   
-  public init(frame: CGRect, layout: UICollectionViewLayout, source: S? = nil, useDiffs: Bool = false) {
+  init(frame: CGRect, layout: UICollectionViewLayout, source: S? = nil, useDiffs: Bool = false) {
     self.useDiffs = useDiffs
     super.init(frame: frame, collectionViewLayout: layout)
     self.customDataSource = DataSource<S, Cell>(collectionView: self)
@@ -49,7 +49,7 @@ open class CollectionView<Cell: UICollectionViewCell, S: Source>: UICollectionVi
     self.source = source
   }
   
-  public required init?(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
@@ -67,19 +67,19 @@ open class CollectionView<Cell: UICollectionViewCell, S: Source>: UICollectionVi
   }
   
   // MARK: - Interactions
-  open var didTapItem: ItemSelectionHandler?
-  open var configureInteractions: ((Cell, IndexPath) -> ())? {
+  var didTapItem: ItemSelectionHandler?
+  var configureInteractions: ((Cell, IndexPath) -> ())? {
     didSet {
       self.customDataSource.configureInteractions = self.configureInteractions
     }
   }
   
   // MARK: - UICollectionViewDelegate
-  open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     self.didTapItem?(indexPath)
   }
   
-  open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     guard let vm = source?.data(section: indexPath.section, row: indexPath.row) else { return .zero }
     return Cell.size(for: vm)
   }

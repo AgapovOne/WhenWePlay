@@ -8,8 +8,8 @@
 
 import UIKit
 
-public protocol CellViewModel {}
+protocol CellViewModel {}
 
-public protocol SizeableCell: ConfigurableCell {
+protocol SizeableCell: ConfigurableCell {
     static func size(for model: VM) -> CGSize
 }

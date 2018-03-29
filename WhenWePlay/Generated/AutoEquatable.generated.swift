@@ -26,7 +26,7 @@ fileprivate func compareArrays<T>(lhs: [T], rhs: [T], compare: (_ lhs: T, _ rhs:
 // MARK: - AutoEquatable for classes, protocols, structs
 // MARK: - GameViewModel AutoEquatable
 extension GameViewModel: Equatable {}
-public func == (lhs: GameViewModel, rhs: GameViewModel) -> Bool {
+internal func == (lhs: GameViewModel, rhs: GameViewModel) -> Bool {
     guard lhs.id == rhs.id else { return false }
     guard lhs.title == rhs.title else { return false }
     return true

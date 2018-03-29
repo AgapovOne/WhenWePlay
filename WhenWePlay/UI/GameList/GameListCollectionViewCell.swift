@@ -10,20 +10,20 @@ import UIKit
 import Cartography
 import Reusable
 
-final public class GameListCollectionViewCell: UICollectionViewCell, Reusable, ConfigurableCell {
-    public typealias VM = GameViewModel
+final class GameListCollectionViewCell: UICollectionViewCell, Reusable, ConfigurableCell {
+    typealias VM = GameViewModel
 
     lazy var titleLabel: UILabel = {
         let l = UILabel.createDefaultLabel()
         return l
     }()
 
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
 
-    public required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
@@ -45,7 +45,7 @@ final public class GameListCollectionViewCell: UICollectionViewCell, Reusable, C
         layer.shouldRasterize = true
     }
 
-    public var viewModel: GameViewModel? {
+    var viewModel: GameViewModel? {
         didSet {
             titleLabel.text = viewModel?.title
         }
@@ -54,7 +54,7 @@ final public class GameListCollectionViewCell: UICollectionViewCell, Reusable, C
 }
 
 extension GameListCollectionViewCell: SizeableCell {
-    public static func size(for model: GameViewModel) -> CGSize {
+    static func size(for model: GameViewModel) -> CGSize {
         return CGSize(width: (UIApplication.shared.keyWindow?.bounds ?? UIScreen.main.bounds).width - 32,
                       height: 80)
     }
