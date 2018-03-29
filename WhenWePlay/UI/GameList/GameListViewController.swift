@@ -24,7 +24,7 @@ final class GameListViewController: UIViewController {
         return collectionView
     }()
     private lazy var button: UIButton = {
-        let b = UIButton.createDefaultButton(title: "RELOAD")
+        let b = UIButton.createDefaultButton(title: "Refresh Data")
         return b
     }()
 
@@ -33,7 +33,6 @@ final class GameListViewController: UIViewController {
 
     // MARK: - Public interface
     var didTapItem: Action?
-    var didTapDone: Action?
 
     // MARK: - Initialization
     static func instantiate(viewModel: GameListViewModel) -> GameListViewController {
@@ -67,11 +66,10 @@ final class GameListViewController: UIViewController {
             } else {
                 area = btn.superview!
             }
-            btn.left == area.left
-            btn.right == area.right
+            btn.left == area.left + 16
+            btn.right == area.right - 16
             btn.bottom == area.bottom - 8
         }
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(barButtonDidTap))
     }
 
     fileprivate func setupViewModel() {
@@ -94,10 +92,6 @@ final class GameListViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @objc private func barButtonDidTap() {
-        didTapDone?()
-    }
-
     @objc private func buttonDidTap() {
         viewModel.reloadButtonPressed()
     }

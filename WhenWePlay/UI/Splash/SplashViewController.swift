@@ -23,7 +23,6 @@ final class SplashViewController: UIViewController {
     }()
 
     // MARK: - Dependencies
-//    private var viewModel: GameListViewModel!
 
     // MARK: - Public interface
     var didTapStart: Action? = nil
@@ -31,15 +30,12 @@ final class SplashViewController: UIViewController {
     // MARK: - Initialization
     static func instantiate() -> SplashViewController {
         let vc = SplashViewController()
-//        vc.viewModel = viewModel
         return vc
     }
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        setupViewModel()
 
         setupUI()
 
@@ -60,15 +56,11 @@ final class SplashViewController: UIViewController {
             } else {
                 area = btn.superview!
             }
-            btn.left == area.left
-            btn.right == area.right
+            btn.left == area.left + 16
+            btn.right == area.right - 16
             btn.bottom == area.bottom - 8
         }
     }
-
-//    fileprivate func setupViewModel() {
-//        assert(viewModel != nil, "View Model should be instantiated. Use instantiate(viewModel:)")
-//    }
 
     fileprivate func setupActions() {
         button.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
@@ -77,7 +69,5 @@ final class SplashViewController: UIViewController {
     // MARK: - Actions
     @objc private func buttonDidTap() {
         didTapStart?()
-//        viewModel.reloadButtonPressed()
     }
 }
-

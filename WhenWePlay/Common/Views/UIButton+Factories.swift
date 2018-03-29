@@ -18,9 +18,15 @@ extension UIButton {
 
         btn.backgroundColor = .white
         btn.layer.cornerRadius = 8
-        btn.layer.masksToBounds = true
 
         btn.contentEdgeInsets = UIEdgeInsetsMake(16, 32, 16, 32)
+
+        btn.layer.shadowColor = UIColor.black.withAlphaComponent(0.25).cgColor
+        btn.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        btn.layer.shadowOpacity = 1.0
+        btn.layer.shadowRadius = 16.0
+        btn.layer.masksToBounds = false
+
         return btn
     }
 }
