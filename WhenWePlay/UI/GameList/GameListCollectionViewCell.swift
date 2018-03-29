@@ -10,22 +10,6 @@ import UIKit
 import Cartography
 import Reusable
 
-public struct GameViewModel: CellViewModel {
-    var id: UUID
-    var title: String
-
-    init(_ game: Game) {
-        id = game.uuid
-        title = game.name
-    }
-}
-
-extension GameViewModel: Hashable, AutoEquatable {
-    public var hashValue: Int {
-        return id.hashValue
-    }
-}
-
 final public class GameListCollectionViewCell: UICollectionViewCell, Reusable, ConfigurableCell {
     public typealias VM = GameViewModel
 

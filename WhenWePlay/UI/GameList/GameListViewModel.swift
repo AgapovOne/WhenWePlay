@@ -22,14 +22,16 @@ public final class GameListViewModel {
 
     typealias ActionClosure = (Action) -> Void
 
+    private let provider: GameDataProvider
+
     var state = State(items: []) {
         didSet {
             actionCallback?(.stateDidUpdate(newState: state, prevState: oldValue))
         }
     }
 
-    public init(games: [Game]) {
-        state = State(items: games.map(GameViewModel.init))
+    public init(provider: GameDataProvider = LocalGameDataProvider()) {
+        self.provider = provider
     }
 
     var actionCallback: ActionClosure? {
@@ -39,14 +41,7 @@ public final class GameListViewModel {
     }
 
     func reloadButtonPressed() {
-        state.items = [
-            Game(uuid: UUID(), name: "THE GAME"),
-            Game(uuid: UUID(), name: "THE GAME 2"),
-            Game(uuid: UUID(), name: "THE NON GAME"),
-            Game(uuid: UUID(), name: "lil game"),
-            Game(uuid: UUID(), name: "gamers game"),
-        ]
+        state.items = provider.fetch()
         .map(GameViewModel.init)
-
     }
 }

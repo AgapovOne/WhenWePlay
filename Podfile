@@ -17,8 +17,4 @@ target 'WhenWePlay' do
         # Pods for testing
     end
 
-    target 'UIFramework' do
-        inherit! :complete
-        # Pods for framework
-    end
 end
