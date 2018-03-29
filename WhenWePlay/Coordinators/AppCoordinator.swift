@@ -12,37 +12,48 @@ enum AppChildCoordinator {
     case games
 }
 
-class AppCoordinator: Coordinator {
+class AppCoordinator: NSObject, Coordinator {
 
     // MARK: - Properties
     private let window: UIWindow
+    private lazy var navigationController: UINavigationController = {
+        let nc = UINavigationController()
+        nc.delegate = self
+        return nc
+    }()
     private var childCoordinators = [AppChildCoordinator: Coordinator]()
+
+    private var didStartAlready = false
 
     // MARK: - Coordinator core
     init(window: UIWindow) {
         self.window = window
+
+        super.init()
+
+        window.rootViewController = navigationController
     }
 
     func start() {
-        showSplash()
-    }
-
-    private func showSplash() {
-        let vc = SplashViewController.instantiate()
-        vc.didTapStart = {
-            self.showGamesList()
-        }
-        self.window.rootViewController = vc
+        showGamesList()
     }
 
     private func showGamesList() {
-        let gamesCoordinator = GamesCoordinator(window: window)
-        gamesCoordinator.didFinish = { [unowned self] in
-            self.showSplash()
-        }
-
+        let gamesCoordinator = GamesCoordinator(navigationController: navigationController)
         childCoordinators[.games] = gamesCoordinator
         gamesCoordinator.start()
     }
 }
 
+extension AppCoordinator: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if !didStartAlready {
+            let vc = SplashViewController.instantiate()
+            vc.didTapStart = {
+                self.navigationController.dismiss(animated: true)
+            }
+            navigationController.present(vc, animated: false)
+            didStartAlready = true
+        }
+    }
+}

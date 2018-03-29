@@ -11,14 +11,11 @@ import UIKit
 class GamesCoordinator: Coordinator {
 
     // MARK: - Properties
-    private let window: UIWindow
-
-    // MARK: - Public interface
-    var didFinish: Action?
+    private let navigationController: UINavigationController
 
     // MARK: - Coordinator core
-    init(window: UIWindow) {
-        self.window = window
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
     func start() {
@@ -27,12 +24,10 @@ class GamesCoordinator: Coordinator {
 
     private func showGamesList() {
         let vc = GameListViewController.instantiate(viewModel: GameListViewModel())
-        vc.didTapDone = {
-            self.didFinish?()
-        }
         vc.didTapItem = {
+
         }
-        window.rootViewController = UINavigationController(rootViewController: vc)
+        navigationController.pushViewController(vc, animated: false)
     }
 }
 
