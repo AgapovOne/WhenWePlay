@@ -72,7 +72,8 @@ final class GameContentViewController: UIViewController {
     fileprivate func setupViewModel() {
         assert(viewModel != nil, "View Model should be instantiated. Use instantiate(viewModel:)")
 
-        viewModel.actionCallback = { [unowned self] action in
+        viewModel.actionCallback = { [weak self] action in
+            guard let `self` = self else { return }
             switch action {
             case .stateDidUpdate(let state, let prevState):
                 self.stackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })

@@ -1,6 +1,14 @@
 PODS:
   - Cartography (3.0.1)
+  - Contentful (1.0.1):
+    - Interstellar (~> 2.1.0)
   - DeepDiff (1.1.2)
+  - Interstellar (2.1.0):
+    - Interstellar/Core (= 2.1.0)
+    - Interstellar/Warpdrive (= 2.1.0)
+  - Interstellar/Core (2.1.0)
+  - Interstellar/Warpdrive (2.1.0):
+    - Interstellar/Core
   - Reusable (4.0.2):
     - Reusable/Storyboard (= 4.0.2)
     - Reusable/View (= 4.0.2)
@@ -11,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - Cartography
+  - Contentful (~> 1.0.0-beta5)
   - DeepDiff
   - Reusable
   - SkeletonView
@@ -18,11 +27,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
+  Contentful: 3aea2646307c87f17cebd0ed26200aa63b5edc05
   DeepDiff: 35c661301baeb2db083ea1b9af183daab6af1c05
+  Interstellar: fdc492e0866f49857a423d47a453b41d1e31f620
   Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
   SkeletonView: 041053e904504e7d8db83df166e599be75659fe1
   Windless: c6b7d63ac3a0c7e6b241e316650d4605abf71894
 
-PODFILE CHECKSUM: 877c5e5394b93bec9c65dcb7b65c4302c22dbdb1
+PODFILE CHECKSUM: dc93f8f3c5585b58c1a8fad31ba6c9f76711a82b
 
 COCOAPODS: 1.4.0

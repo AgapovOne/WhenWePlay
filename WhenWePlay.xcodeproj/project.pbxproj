@@ -29,6 +29,7 @@
 		378BCCC7206D0E0E00B21FB7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BCCC6206D0E0E00B21FB7 /* AppCoordinator.swift */; };
 		378BCCC9206D0EE200B21FB7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BCCC8206D0EE200B21FB7 /* Coordinator.swift */; };
 		378BCCCB206D127000B21FB7 /* GamesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BCCCA206D127000B21FB7 /* GamesCoordinator.swift */; };
+		8D3116DB206E44AB00483A48 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3116DA206E44AB00483A48 /* Configuration.swift */; };
 		8D5DC6FD206DE942009601EC /* GameContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5DC6FC206DE942009601EC /* GameContentViewController.swift */; };
 		8D5DC6FF206DE96C009601EC /* GameContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5DC6FE206DE96C009601EC /* GameContentViewModel.swift */; };
 		8DFB982F206431AF009055F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DFB982E206431AF009055F7 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		558D6DD42913F3E3A3982B95 /* Pods-UIFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-UIFramework/Pods-UIFramework.release.xcconfig"; sourceTree = "<group>"; };
 		768EC8D13A8323FD559CFC82 /* Pods-WhenWePlay-DataFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhenWePlay-DataFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhenWePlay-DataFramework/Pods-WhenWePlay-DataFramework.release.xcconfig"; sourceTree = "<group>"; };
 		78A991C6448805E1983AB751 /* Pods_WhenWePlay_DataFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhenWePlay_DataFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D3116DA206E44AB00483A48 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		8D5DC6FC206DE942009601EC /* GameContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentViewController.swift; sourceTree = "<group>"; };
 		8D5DC6FE206DE96C009601EC /* GameContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentViewModel.swift; sourceTree = "<group>"; };
 		8D8C39CF2064BEDD003CC445 /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -250,6 +252,7 @@
 				8DFB9830206431AF009055F7 /* LaunchScreen.storyboard */,
 				8DFB982E206431AF009055F7 /* Assets.xcassets */,
 				8DFB9833206431AF009055F7 /* Info.plist */,
+				8D3116DA206E44AB00483A48 /* Configuration.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -476,7 +479,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WhenWePlay/Pods-WhenWePlay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
+				"${BUILT_PRODUCTS_DIR}/Contentful/Contentful.framework",
 				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
+				"${BUILT_PRODUCTS_DIR}/Interstellar/Interstellar.framework",
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/Windless/Windless.framework",
@@ -484,7 +489,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Contentful.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Interstellar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Windless.framework",
@@ -570,6 +577,7 @@
 				37025424206D05EA00E87612 /* AutoEquatable.generated.swift in Sources */,
 				378BCCCB206D127000B21FB7 /* GamesCoordinator.swift in Sources */,
 				378BCCC4206D0BB300B21FB7 /* SplashViewController.swift in Sources */,
+				8D3116DB206E44AB00483A48 /* Configuration.swift in Sources */,
 				37025417206D05EA00E87612 /* DataProvider.swift in Sources */,
 				37025421206D05EA00E87612 /* DataSource.swift in Sources */,
 				8D5DC6FF206DE96C009601EC /* GameContentViewModel.swift in Sources */,

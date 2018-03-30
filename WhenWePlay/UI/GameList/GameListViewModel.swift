@@ -28,7 +28,7 @@ final class GameListViewModel {
         }
     }
 
-    init(provider: GameDataProvider = LocalGameDataProvider()) {
+    init(provider: GameDataProvider = ContentfulGameDataProvider()) {
         self.provider = provider
     }
 
@@ -40,8 +40,11 @@ final class GameListViewModel {
 
     // Inputs
     func reloadButtonPressed() {
-        state.items = provider.fetch()
-        .map(GameViewModel.init)
+        provider.fetch { (games) in
+            DispatchQueue.main.async {
+                self.state.items = games.map(GameViewModel.init)
+            }
+        }
     }
 
     // Outputs
