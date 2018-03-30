@@ -17,26 +17,17 @@ protocol GameDataProvider {
 class LocalGameDataProvider: GameDataProvider {
     func fetch(completion: @escaping ([Game]) -> Void) {
         completion([
-            Game(uuid: UUID(), name: "THE GAME"),
-            Game(uuid: UUID(), name: "THE GAME 2"),
-            Game(uuid: UUID(), name: "THE NON GAME"),
-            Game(uuid: UUID(), name: "lil game"),
-            Game(uuid: UUID(), name: "gamers game"),
+//            Game(uuid: UUID(), name: "THE GAME"),
+//            Game(uuid: UUID(), name: "THE GAME 2"),
+//            Game(uuid: UUID(), name: "THE NON GAME"),
+//            Game(uuid: UUID(), name: "lil game"),
+//            Game(uuid: UUID(), name: "gamers game"),
         ])
     }
 }
 
 let client: Client = Client(spaceId: Configuration.Contentful.SPACE_ID,
                             accessToken: Configuration.Contentful.ACCESS_TOKEN)
-
-extension Game {
-    init?(_ entry: Entry) {
-        guard let name = entry.fields["team1"] as? String else {
-            return nil
-        }
-        self.init(uuid: UUID(), name: name)
-    }
-}
 
 class ContentfulGameDataProvider: GameDataProvider {
     func fetch(completion: @escaping ([Game]) -> Void) {

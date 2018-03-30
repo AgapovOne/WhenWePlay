@@ -18,7 +18,10 @@ final class GameListViewController: UIViewController {
                                  height: 80)
         layout.minimumInteritemSpacing = 8
         layout.minimumLineSpacing = 8
-        layout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 8,
+                                           left: 0,
+                                           bottom: 8,
+                                           right: 0)
         let collectionView = CollectionView<GameListCollectionViewCell, SimpleSource<GameViewModel>>(frame: .zero, layout: layout)
         collectionView.useDiffs = true
         collectionView.backgroundColor = .white
