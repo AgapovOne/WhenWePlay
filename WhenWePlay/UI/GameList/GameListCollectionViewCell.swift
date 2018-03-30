@@ -34,15 +34,11 @@ final class GameListCollectionViewCell: UICollectionViewCell, Reusable, Configur
             label.edges == label.superview!.edges.inseted(horizontally: 16)
         }
 
-        layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-        layer.shadowRadius = 16.0
-        layer.shadowOffset = CGSize(width: 0, height: 4)
-        layer.masksToBounds = false
-        layer.shadowOpacity = 1
+        backgroundColor = .white
 
-//        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+        layer.cornerRadius = 8
 
-        layer.shouldRasterize = true
+        addShadow()
     }
 
     var viewModel: GameViewModel? {

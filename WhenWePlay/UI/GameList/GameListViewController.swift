@@ -18,6 +18,7 @@ final class GameListViewController: UIViewController {
                                  height: 80)
         layout.minimumInteritemSpacing = 8
         layout.minimumLineSpacing = 8
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         let collectionView = CollectionView<GameListCollectionViewCell, SimpleSource<GameViewModel>>(frame: .zero, layout: layout)
         collectionView.useDiffs = true
         collectionView.backgroundColor = .white
@@ -75,7 +76,8 @@ final class GameListViewController: UIViewController {
     fileprivate func setupViewModel() {
         assert(viewModel != nil, "View Model should be instantiated. Use instantiate(viewModel:)")
 
-        viewModel.actionCallback = { [unowned self] action in
+        viewModel.actionCallback = { [weak self] action in
+            guard let `self` = self else { return }
             switch action {
             case .stateDidUpdate(let state, let prevState):
                 self.collectionView.source = SimpleSource<GameViewModel>(state.items)
@@ -86,7 +88,8 @@ final class GameListViewController: UIViewController {
     fileprivate func setupActions() {
         button.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
 
-        collectionView.didTapItem = { [unowned self] indexPath in
+        collectionView.didTapItem = { [weak self] indexPath in
+            guard let `self` = self else { return }
             self.didTapItem?(self.viewModel.item(at: indexPath))
         }
     }
