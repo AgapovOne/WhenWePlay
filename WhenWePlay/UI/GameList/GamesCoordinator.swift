@@ -24,10 +24,19 @@ class GamesCoordinator: Coordinator {
 
     private func showGamesList() {
         let vc = GameListViewController.instantiate(viewModel: GameListViewModel())
-        vc.didTapItem = {
-
+        vc.didTapItem = { vm in
+            self.showGameContent(viewModel: vm)
         }
-        navigationController.pushViewController(vc, animated: false)
+        navigationController.setViewControllers([vc], animated: false)
+    }
+
+    private func showGameContent(viewModel: GameViewModel) {
+        let vm = GameContentViewModel(viewModel)
+        let vc = GameContentViewController.instantiate(viewModel: vm)
+        vc.didTapReturnButton = {
+            self.navigationController.popViewController(animated: true)
+        }
+        navigationController.pushViewController(vc, animated: true)
     }
 }
 

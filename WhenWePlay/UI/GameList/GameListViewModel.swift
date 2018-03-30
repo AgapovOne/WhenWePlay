@@ -8,8 +8,6 @@
 
 import Foundation
 
-typealias Item = String
-
 final class GameListViewModel {
     struct State {
         var items: [GameViewModel]
@@ -39,9 +37,16 @@ final class GameListViewModel {
             actionCallback?(.stateDidUpdate(newState: state, prevState: nil))
         }
     }
-
+    
+    // Inputs
     func reloadButtonPressed() {
         state.items = provider.fetch()
         .map(GameViewModel.init)
     }
+
+    // Outputs
+    func item(at indexPath: IndexPath) -> GameViewModel {
+        return state.items[indexPath.row]
+    }
+
 }

@@ -1,42 +1,37 @@
 //
-//  GameListViewController.swift
+//  GameContentViewController.swift
 //  WhenWePlay
 //
-//  Created by Alex Agapov on 23/03/2018.
+//  Created by Alex Agapov on 30/03/2018.
 //  Copyright © 2018 Alex Agapov. All rights reserved.
 //
 
 import UIKit
 import Cartography
 
-final class GameListViewController: UIViewController {
+final class GameContentViewController: UIViewController {
 
     // MARK: - UI
-    private lazy var collectionView: CollectionView<GameListCollectionViewCell, SimpleSource<GameViewModel>> = {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: self.view.bounds.width - 32,
-                                 height: 80)
-        layout.minimumInteritemSpacing = 8
-        layout.minimumLineSpacing = 8
-        let collectionView = CollectionView<GameListCollectionViewCell, SimpleSource<GameViewModel>>(frame: .zero, layout: layout)
-        collectionView.useDiffs = true
-        collectionView.backgroundColor = .white
-        return collectionView
+    private lazy var stackView: UIStackView = {
+        let sv = UIStackView(frame: .zero)
+        sv.spacing = 16
+        sv.axis = .vertical
+        return sv
     }()
     private lazy var button: UIButton = {
-        let b = UIButton.createDefaultButton(title: "Refresh Data")
+        let b = UIButton.createDefaultButton(title: "Return")
         return b
     }()
 
     // MARK: - Dependencies
-    private var viewModel: GameListViewModel!
+    private var viewModel: GameContentViewModel!
 
     // MARK: - Public interface
-    var didTapItem: ((GameViewModel) -> Void)?
+    var didTapReturnButton: Action?
 
     // MARK: - Initialization
-    static func instantiate(viewModel: GameListViewModel) -> GameListViewController {
-        let vc = GameListViewController()
+    static func instantiate(viewModel: GameContentViewModel) -> GameContentViewController {
+        let vc = GameContentViewController()
         vc.viewModel = viewModel
         return vc
     }
@@ -53,9 +48,11 @@ final class GameListViewController: UIViewController {
     }
 
     fileprivate func setupUI() {
-        view.addSubview(collectionView)
-        constrain(collectionView) { (c) in
-            c.edges == c.superview!.edges
+        view.backgroundColor = .white
+
+        view.addSubview(stackView)
+        constrain(stackView) { (sv) in
+            sv.edges == sv.superview!.edges.inseted(by: 16)
         }
 
         view.addSubview(button)
@@ -78,21 +75,21 @@ final class GameListViewController: UIViewController {
         viewModel.actionCallback = { [unowned self] action in
             switch action {
             case .stateDidUpdate(let state, let prevState):
-                self.collectionView.source = SimpleSource<GameViewModel>(state.items)
+                self.stackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
+
+                let label = UILabel.createDefaultLabel()
+                label.text = state.item.title
+                self.stackView.addArrangedSubview(label)
             }
         }
     }
 
     fileprivate func setupActions() {
         button.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
-
-        collectionView.didTapItem = { [unowned self] indexPath in
-            self.didTapItem?(self.viewModel.item(at: indexPath))
-        }
     }
 
     // MARK: - Actions
     @objc private func buttonDidTap() {
-        viewModel.reloadButtonPressed()
+        didTapReturnButton?()
     }
 }
