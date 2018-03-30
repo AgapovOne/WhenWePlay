@@ -22,7 +22,7 @@ final class GameListViewModel {
 
     private let provider: GameDataProvider
 
-    var state = State(items: []) {
+    private var state = State(items: []) {
         didSet {
             actionCallback?(.stateDidUpdate(newState: state, prevState: oldValue))
         }
@@ -37,7 +37,7 @@ final class GameListViewModel {
             actionCallback?(.stateDidUpdate(newState: state, prevState: nil))
         }
     }
-    
+
     // Inputs
     func reloadButtonPressed() {
         state.items = provider.fetch()

@@ -27,7 +27,7 @@ final class GameContentViewController: UIViewController {
     private var viewModel: GameContentViewModel!
 
     // MARK: - Public interface
-    var didTapReturnButton: Action?
+    var didTapReturnButton: ActionClosure?
 
     // MARK: - Initialization
     static func instantiate(viewModel: GameContentViewModel) -> GameContentViewController {

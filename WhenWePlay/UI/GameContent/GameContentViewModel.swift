@@ -20,7 +20,7 @@ final class GameContentViewModel {
 
     typealias ActionClosure = (Action) -> Void
 
-    var state: State {
+    private var state: State {
         didSet {
             actionCallback?(.stateDidUpdate(newState: state, prevState: oldValue))
         }

@@ -25,7 +25,7 @@ final class SplashViewController: UIViewController {
     // MARK: - Dependencies
 
     // MARK: - Public interface
-    var didTapStart: Action? = nil
+    var didTapStart: ActionClosure? = nil
 
     // MARK: - Initialization
     static func instantiate() -> SplashViewController {
