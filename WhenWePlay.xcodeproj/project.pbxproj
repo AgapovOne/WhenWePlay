@@ -22,7 +22,6 @@
 		37025421206D05EA00E87612 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB4187C206967AB00D8DAFE /* DataSource.swift */; };
 		37025422206D05EA00E87612 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB4187A206967AB00D8DAFE /* Source.swift */; };
 		37025423206D05EA00E87612 /* Sourcery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37083FE1206A29E700DF9A22 /* Sourcery.swift */; };
-		37025424206D05EA00E87612 /* AutoEquatable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37083FE4206A2A5E00DF9A22 /* AutoEquatable.generated.swift */; };
 		37025425206D060200E87612 /* GameListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCA8F8F20651F68000B803A /* GameListCollectionViewCell.xib */; };
 		378BCCC2206D0B8200B21FB7 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BCCC1206D0B8200B21FB7 /* Closures.swift */; };
 		378BCCC4206D0BB300B21FB7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378BCCC3206D0BB300B21FB7 /* SplashViewController.swift */; };
@@ -70,7 +69,6 @@
 		370253F4206CEA1B00E87612 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		37083FC8206A227600DF9A22 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		37083FE1206A29E700DF9A22 /* Sourcery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sourcery.swift; sourceTree = "<group>"; };
-		37083FE4206A2A5E00DF9A22 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
 		37083FF5206A5EAB00DF9A22 /* UILabel+Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Factories.swift"; sourceTree = "<group>"; };
 		378BCCC1206D0B8200B21FB7 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		378BCCC3206D0BB300B21FB7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 		37083FE3206A2A5E00DF9A22 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				37083FE4206A2A5E00DF9A22 /* AutoEquatable.generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -578,7 +575,6 @@
 				3702541B206D05EA00E87612 /* GameListViewModel.swift in Sources */,
 				8D280F62206E4CFF007D1D72 /* UIView+Extensions.swift in Sources */,
 				8D5DC6FD206DE942009601EC /* GameContentViewController.swift in Sources */,
-				37025424206D05EA00E87612 /* AutoEquatable.generated.swift in Sources */,
 				378BCCCB206D127000B21FB7 /* GamesCoordinator.swift in Sources */,
 				378BCCC4206D0BB300B21FB7 /* SplashViewController.swift in Sources */,
 				8D3116DB206E44AB00483A48 /* Configuration.swift in Sources */,
