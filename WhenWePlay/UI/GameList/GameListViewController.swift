@@ -57,9 +57,13 @@ final class GameListViewController: UIViewController {
     }
 
     fileprivate func setupUI() {
+        view.backgroundColor = .white
+
         view.addSubview(collectionView)
         constrain(collectionView) { (c) in
-            c.edges == c.superview!.edges
+            c.top == c.superview!.top
+            c.left == c.superview!.left
+            c.right == c.superview!.right
         }
 
         view.addSubview(button)
@@ -72,8 +76,13 @@ final class GameListViewController: UIViewController {
             }
             btn.left == area.left + 16
             btn.right == area.right - 16
-            btn.bottom == area.bottom - 8
+            btn.bottom == area.bottom - 16
         }
+
+        constrain(collectionView, button) { (c, b) in
+            c.bottom == b.top - 16
+        }
+
     }
 
     fileprivate func setupViewModel() {
