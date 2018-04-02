@@ -8,14 +8,13 @@ target 'WhenWePlay' do
     # UI
     pod 'Reusable'
     pod 'Cartography'
+    pod 'DeepDiff'
 
     # API
     pod 'Contentful', '~> 1.0.0-beta5'
 
     # Test
-    pod 'Windless'
     pod 'SkeletonView'
-    pod 'DeepDiff'
 
 
     target 'WhenWePlayTests' do

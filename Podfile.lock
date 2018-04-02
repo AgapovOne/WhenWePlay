@@ -15,7 +15,6 @@ PODS:
   - Reusable/Storyboard (4.0.2)
   - Reusable/View (4.0.2)
   - SkeletonView (1.1.1)
-  - Windless (0.1.5)
 
 DEPENDENCIES:
   - Cartography
@@ -23,7 +22,6 @@ DEPENDENCIES:
   - DeepDiff
   - Reusable
   - SkeletonView
-  - Windless
 
 SPEC CHECKSUMS:
   Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
@@ -32,8 +30,7 @@ SPEC CHECKSUMS:
   Interstellar: fdc492e0866f49857a423d47a453b41d1e31f620
   Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
   SkeletonView: 041053e904504e7d8db83df166e599be75659fe1
-  Windless: c6b7d63ac3a0c7e6b241e316650d4605abf71894
 
-PODFILE CHECKSUM: dc93f8f3c5585b58c1a8fad31ba6c9f76711a82b
+PODFILE CHECKSUM: c22904ea84201eb3da733cffb5fa0f681cb06695
 
 COCOAPODS: 1.4.0
