@@ -28,7 +28,7 @@ final class GameListViewController: UIViewController {
         return collectionView
     }()
     private lazy var button: UIButton = {
-        let b = UIButton.createDefaultButton(title: "Refresh Data")
+        let b = UIButton.createAlternateButton(title: "Refresh Data")
         return b
     }()
 

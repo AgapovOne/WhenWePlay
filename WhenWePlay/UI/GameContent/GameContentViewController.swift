@@ -20,8 +20,7 @@ final class GameContentViewController: UIViewController {
         return sv
     }()
     private lazy var button: UIButton = {
-        let b = UIButton.createDefaultButton(title: "Return")
-
+        let b = UIButton.createAlternateButton(title: "Return")
         return b
     }()
 
