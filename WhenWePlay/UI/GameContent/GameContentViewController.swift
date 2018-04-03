@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import Hero
 
 final class GameContentViewController: UIViewController {
 
@@ -20,6 +21,7 @@ final class GameContentViewController: UIViewController {
     }()
     private lazy var button: UIButton = {
         let b = UIButton.createDefaultButton(title: "Return")
+
         return b
     }()
 
@@ -48,6 +50,8 @@ final class GameContentViewController: UIViewController {
     }
 
     fileprivate func setupUI() {
+        hero.isEnabled = true
+
         view.backgroundColor = .white
 
         view.addSubview(stackView)
@@ -79,6 +83,8 @@ final class GameContentViewController: UIViewController {
                 self.stackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
 
                 let label = UILabel.createDefaultLabel()
+                label.hero.id = "gameNameLabel"
+                label.hero.modifiers = [.fade]
                 label.text = state.item.title
                 self.stackView.addArrangedSubview(label)
             }

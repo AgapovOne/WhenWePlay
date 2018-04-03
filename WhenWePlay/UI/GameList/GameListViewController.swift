@@ -59,6 +59,9 @@ final class GameListViewController: UIViewController {
     fileprivate func setupUI() {
         view.backgroundColor = .white
 
+        navigationController?.hero.isEnabled = true
+        hero.isEnabled = true
+
         view.addSubview(collectionView)
         constrain(collectionView) { (c) in
             c.top == c.superview!.top

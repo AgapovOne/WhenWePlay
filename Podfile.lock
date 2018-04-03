@@ -3,6 +3,7 @@ PODS:
   - Contentful (1.0.1):
     - Interstellar (~> 2.1.0)
   - DeepDiff (1.1.2)
+  - Hero (1.1.0)
   - Interstellar (2.1.0):
     - Interstellar/Core (= 2.1.0)
     - Interstellar/Warpdrive (= 2.1.0)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Cartography
   - Contentful (~> 1.0.0-beta5)
   - DeepDiff
+  - Hero
   - Reusable
   - SkeletonView
 
@@ -27,10 +29,11 @@ SPEC CHECKSUMS:
   Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
   Contentful: 3aea2646307c87f17cebd0ed26200aa63b5edc05
   DeepDiff: 35c661301baeb2db083ea1b9af183daab6af1c05
+  Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
   Interstellar: fdc492e0866f49857a423d47a453b41d1e31f620
   Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
   SkeletonView: 041053e904504e7d8db83df166e599be75659fe1
 
-PODFILE CHECKSUM: c22904ea84201eb3da733cffb5fa0f681cb06695
+PODFILE CHECKSUM: b9fe9f92734ad08b8ca3379bf6db2cc3b140903c
 
 COCOAPODS: 1.4.0

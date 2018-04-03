@@ -9,12 +9,14 @@
 import UIKit
 import Cartography
 import Reusable
+import Hero
 
 final class GameListCollectionViewCell: UICollectionViewCell, Reusable, ConfigurableCell {
     typealias VM = GameViewModel
 
     lazy var titleLabel: UILabel = {
         let l = UILabel.createDefaultLabel()
+        l.hero.id = "gameNameLabel"
         return l
     }()
 
@@ -29,6 +31,8 @@ final class GameListCollectionViewCell: UICollectionViewCell, Reusable, Configur
     }
 
     func setup() {
+        hero.isEnabled = true
+
         addSubview(titleLabel)
         constrain(titleLabel) { label in
             label.edges == label.superview!.edges.inseted(horizontally: 16)

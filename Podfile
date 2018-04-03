@@ -15,7 +15,7 @@ target 'WhenWePlay' do
 
     # Test
     pod 'SkeletonView'
-
+    pod 'Hero'
 
     target 'WhenWePlayTests' do
         inherit! :search_paths
