@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import Hero
 
 final class GameListViewController: UIViewController {
 
@@ -18,10 +19,6 @@ final class GameListViewController: UIViewController {
                                  height: 80)
         layout.minimumInteritemSpacing = 8
         layout.minimumLineSpacing = 8
-        layout.sectionInset = UIEdgeInsets(top: 8,
-                                           left: 0,
-                                           bottom: 8,
-                                           right: 0)
         let collectionView = CollectionView<GameListCollectionViewCell, SimpleSource<GameViewModel>>(frame: .zero, layout: layout)
         collectionView.useDiffs = true
         collectionView.backgroundColor = .white
@@ -29,6 +26,7 @@ final class GameListViewController: UIViewController {
     }()
     private lazy var button: UIButton = {
         let b = UIButton.createAlternateButton(title: "Refresh Data")
+        b.hero.id = "games.button"
         return b
     }()
 
@@ -59,14 +57,9 @@ final class GameListViewController: UIViewController {
     fileprivate func setupUI() {
         view.backgroundColor = .white
 
-        navigationController?.hero.isEnabled = true
-        hero.isEnabled = true
-
         view.addSubview(collectionView)
         constrain(collectionView) { (c) in
-            c.top == c.superview!.top
-            c.left == c.superview!.left
-            c.right == c.superview!.right
+            c.edges == c.superview!.edges
         }
 
         view.addSubview(button)
@@ -82,10 +75,10 @@ final class GameListViewController: UIViewController {
             btn.bottom == area.bottom - 16
         }
 
-        constrain(collectionView, button) { (c, b) in
-            c.bottom == b.top - 16
-        }
-
+        collectionView.contentInset = UIEdgeInsets(top: 16,
+                                                   left: 0,
+                                                   bottom: 16 + button.frame.height + 16,
+                                                   right: 0)
     }
 
     fileprivate func setupViewModel() {

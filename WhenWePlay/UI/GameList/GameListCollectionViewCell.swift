@@ -16,7 +16,6 @@ final class GameListCollectionViewCell: UICollectionViewCell, Reusable, Configur
 
     lazy var titleLabel: UILabel = {
         let l = UILabel.createDefaultLabel()
-        l.hero.id = "gameNameLabel"
         return l
     }()
 
@@ -31,8 +30,6 @@ final class GameListCollectionViewCell: UICollectionViewCell, Reusable, Configur
     }
 
     func setup() {
-        hero.isEnabled = true
-
         addSubview(titleLabel)
         constrain(titleLabel) { label in
             label.edges == label.superview!.edges.inseted(horizontally: 16)
@@ -47,6 +44,7 @@ final class GameListCollectionViewCell: UICollectionViewCell, Reusable, Configur
 
     var viewModel: GameViewModel? {
         didSet {
+            titleLabel.hero.id = "\(viewModel?.hashValue)"
             titleLabel.text = viewModel?.title
         }
     }

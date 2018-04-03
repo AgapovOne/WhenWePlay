@@ -13,14 +13,14 @@ import Hero
 final class GameContentViewController: UIViewController {
 
     // MARK: - UI
-    private lazy var stackView: UIStackView = {
-        let sv = UIStackView(frame: .zero)
-        sv.spacing = 16
-        sv.axis = .vertical
-        return sv
+    private lazy var label: UILabel = {
+        let l = UILabel.createDefaultLabel()
+        l.hero.modifiers = [.scale()]
+        return l
     }()
     private lazy var button: UIButton = {
         let b = UIButton.createAlternateButton(title: "Return")
+        b.hero.id = "games.button"
         return b
     }()
 
@@ -53,9 +53,9 @@ final class GameContentViewController: UIViewController {
 
         view.backgroundColor = .white
 
-        view.addSubview(stackView)
-        constrain(stackView) { (sv) in
-            sv.edges == sv.superview!.edges.inseted(by: 16)
+        view.addSubview(label)
+        constrain(label) { (l) in
+            l.center == l.superview!.center
         }
 
         view.addSubview(button)
@@ -68,7 +68,7 @@ final class GameContentViewController: UIViewController {
             }
             btn.left == area.left + 16
             btn.right == area.right - 16
-            btn.bottom == area.bottom - 8
+            btn.bottom == area.bottom - 16
         }
     }
 
@@ -79,13 +79,7 @@ final class GameContentViewController: UIViewController {
             guard let `self` = self else { return }
             switch action {
             case .stateDidUpdate(let state, let prevState):
-                self.stackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
-
-                let label = UILabel.createDefaultLabel()
-                label.hero.id = "gameNameLabel"
-                label.hero.modifiers = [.fade]
-                label.text = state.item.title
-                self.stackView.addArrangedSubview(label)
+                self.label.text = state.item.title
             }
         }
     }

@@ -35,9 +35,10 @@ class GamesCoordinator: Coordinator {
         let vm = GameContentViewModel(viewModel)
         let vc = GameContentViewController.instantiate(viewModel: vm)
         vc.didTapReturnButton = {
-            self.navigationController.popViewController(animated: true)
+            vc.hero.dismissViewController()
         }
-        navigationController.pushViewController(vc, animated: true)
+        vc.hero.modalAnimationType = .selectBy(presenting: .zoom, dismissing: .uncover(direction: .up))
+        navigationController.present(vc, animated: true)
     }
 }
 
