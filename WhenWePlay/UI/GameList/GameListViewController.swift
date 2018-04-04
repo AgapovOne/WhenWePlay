@@ -77,7 +77,7 @@ final class GameListViewController: UIViewController {
 
         collectionView.contentInset = UIEdgeInsets(top: 16,
                                                    left: 0,
-                                                   bottom: 16 + button.frame.height + 16,
+                                                   bottom: 16 + 54 + 16,
                                                    right: 0)
     }
 
